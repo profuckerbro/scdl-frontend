@@ -4,6 +4,7 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import Link from '@material-ui/core/Link';
 import ScdlDownload from './scdl';
+import AppElement from './scdl/app';
 
 
 
@@ -22,8 +23,8 @@ function Copyright() {
 
 export default function App() {
   return (
-    <Container maxWidth="sm">
-     <ScdlDownload/>
+    <Container>
+     <AppElement/>
     </Container>
   );
 }
