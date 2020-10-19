@@ -56,10 +56,20 @@ axios({
         "Url": payload
         },
   }).then((response) => {
+    console.log(response)
     const url = window.URL.createObjectURL(new Blob([response.data]));
     const link = document.createElement('a');
     link.href = url;
-    link.setAttribute('download', 'file.mp3');
+    //Set Download Name
+    const contentDisposition = response.headers['content-disposition'];
+    let fileName = 'unknown';
+    if (contentDisposition) {
+        const fileNameMatch = contentDisposition.match(/filename[^;=\n]*=(?:(\\?['"])(.*?)\1|(?:[^\s]+'.*?')?([^;\n]*))/i);
+      
+        fileName = fileNameMatch[2];
+    }
+    link.setAttribute('download', fileName);
+
     document.body.appendChild(link);
     link.click();
   });
