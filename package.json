@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@material-ui/core": "latest",
+    "@material-ui/lab": "^4.0.0-alpha.56",
     "axios": "^0.20.0",
     "clsx": "latest",
     "react": "latest",
