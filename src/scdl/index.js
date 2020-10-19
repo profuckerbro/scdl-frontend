@@ -66,7 +66,7 @@ axios({
         return (
             <div>
               <ScdlAlert alert={this.state.alert} />
-            <form noValidate autoComplete="off" className={this.props.passName}>
+            <form noValidate autoComplete="off" className={this.props.passName} onSubmit={() => this.PostRequest(this.state.url)} >
               <TextField id="outlined-basic" label="Soundcloud URL" variant="outlined" onChange={this.handleChange}/>
               <Button onClick={() => this.PostRequest(this.state.url)} >Download</Button>
             </form>
